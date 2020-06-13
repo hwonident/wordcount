@@ -1,0 +1,35 @@
+<head>
+    <style>
+        body {background-color: rgb(140, 185, 211); color: white; }
+        #wrap {overflow: hidden; float: left;}
+        #total {float: left; margin: 20px 30px;}
+        #alltext {float: left; margin: 20px 50px;}
+        #countword {float: left; margin: 20px 20px;}
+
+    </style>
+</head>
+
+<body>
+<div id=wrap>
+    <div id=total>
+        <h3>당신이 입력한 텍스트는 {{total}} 단어로 구성되어 있습니다.</h3>
+        <a href="{% url 'home' %}"> 다시하기 </a>
+    </div>
+    <div id=alltext>
+        <h3>입력한 텍스트: </h3>
+        {{alltext}}
+    </div>
+    <div id=countword>
+        <h3>단어 카운트: </h3>
+{% for word, frequency in dictionary %}
+{{ word }}: {{ frequency}}
+<br>
+{% endfor %}
+    </div>
+</div>
+
+
+
+
+
+</body>
